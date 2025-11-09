@@ -1,0 +1,27 @@
+CONTRASEÑA DE MYSQL ROOT:
+Root123!
+
+DESACTIVAR:
+sudo systemctl disable apache2
+sudo systemctl disable mysql
+
+
+ACTIVAR:
+sudo systemctl start apache2
+sudo systemctl start mysql
+
+
+STOP:
+sudo systemctl stop apache2
+sudo systemctl stop mysql
+
+
+CONFIGURAR PARA TRANSMITIR:
+https://www.youtube.com/shorts/6Jcn-GGrHYI
+
+
+¿Me ayudas con una encuesta? Es para una tarea del instituto
+
+Hola comunidad, me gustaría que me puedan apoyar con este formulario, es una tarea del instituto, les tomará 2 minutos, espero su colaboración:
+https://forms.gle/FLwNgiwsaG9sBNwg6
+Gracias.

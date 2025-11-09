@@ -1,0 +1,141 @@
+---
+const dataHeder = [
+    { id: 1, name: "Inicio", hred: "#" },
+    { id: 2, name: "Nosotros", hred: "#" },
+    { id: 3, name: "Servicios", hred: "#" },
+    { id: 4, name: "Clientes", hred: "#" },
+    { id: 5, name: "Contacto", hred: "#" },
+];
+---
+
+<header
+    class="w-full px-4 md:px-0 py-1 bg-white relative transition-all duration-300"
+    id="headerItem"
+>
+    <div
+        class="w-full max-w-6xl mx-auto grid items-center grid-cols-2 md:grid-cols-3"
+    >
+        <div class="flex items-center">
+            <img
+                src="https://files.catbox.moe/dy7p7d.png"
+                alt=""
+                class="w-32 h-auto relative z-20"
+            />
+        </div>
+
+        <div
+            id="menuDesktop"
+            class="hidden md:flex items-center justify-center"
+        >
+            <ul class="flex justify-center items-center gap-6" id="listaItem">
+                {
+                    dataHeder.map((item) => (
+                        <li class="h-10 w-full flex flex-col justify-center">
+                            <a
+                                class="text-sm font-medium hover:text-[#b1b1b1] leading-6 h-full w-full flex flex-col justify-center text-header text-black transition-all duration-300"
+                                href={item.hred}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <div class="flex justify-end gap-1 relative z-20">
+            <a
+                href="https://wa.link/m4tjp0"
+                target="_blank"
+                class="flex flex-row flex-nowrap items-center justify-center content-center relative cursor-pointer overflow-hidden w-[118px] h-9 px-3 py-2 gap-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 transition-all text-white text-sm font-normal antialiased opacity-100 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1)]"
+                >Contactar</a
+            >
+            <button
+                id="buttonClose"
+                class="relative flex flex-col justify-center items-center w-8 h-8 gap-1.5 md:hidden group transition-all duration-300 cursor-pointer"
+            >
+                <span
+                    class="line h-0.5 w-6 bg-white rounded-full transition-all duration-300"
+                ></span>
+                <span
+                    class="line h-0.5 w-6 bg-white rounded-full transition-all duration-300"
+                ></span>
+                <span
+                    class="line h-0.5 w-6 bg-white rounded-full transition-all duration-300"
+                ></span>
+            </button>
+        </div>
+
+        <div
+            id="menuMobile"
+            class="fixed top-0 left-0 right-0 mx-2 m-2 pt-28 px-4 rounded-lg border border-[#3d3d40]/50
+                bg-[#212123]/90 backdrop-blur-lg shadow-lg shadow-black/20
+                transform origin-top scale-y-0 transition-transform duration-300 ease-in-out z-10 pb-2"
+        >
+            <ul
+                class="md:flex-col justify-center items-center w-full gap-6 text-white"
+            >
+                {
+                    dataHeder.map((item) => (
+                        <li class="h-10 w-full flex flex-col justify-center">
+                            <a
+                                class="text-base font-medium hover:text-[#d7d7d7] leading-6 h-full w-full flex flex-col justify-center"
+                                href={item.hred}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</header>
+
+<script is:client:load>
+    const header = document.getElementById("headerItem");
+    const btnClose = document.getElementById("buttonClose");
+    const lines = btnClose.querySelectorAll(".line");
+    const menuMobile = document.getElementById("menuMobile");
+    const textHeader = document.querySelectorAll(".text-header");
+
+    // Scroll para cambiar color de header y texto
+    const onScroll = () => {
+        if (window.scrollY > 10) {
+            header.classList.add("bg-black", "fixed", "z-10");
+            header.classList.remove("bg-white", "relative");
+            textHeader.forEach((el) => {
+                el.classList.add("text-white");
+                el.classList.remove("text-black");
+            });
+        } else {
+            header.classList.remove("bg-black", "fixed");
+            header.classList.add("bg-white", "relative");
+            textHeader.forEach((el) => {
+                el.classList.add("text-black");
+                el.classList.remove("text-white");
+            });
+        }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Burger menu
+    btnClose.addEventListener("click", () => {
+        const isOpen = menuMobile.classList.contains("scale-y-100");
+
+        if (isOpen) {
+            menuMobile.classList.remove("scale-y-100");
+            menuMobile.classList.add("scale-y-0");
+        } else {
+            menuMobile.classList.add("scale-y-100");
+            menuMobile.classList.remove("scale-y-0");
+        }
+
+        // Animación de X
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-[9px]");
+        lines[1].classList.toggle("opacity-0");
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("-translate-y-[7px]");
+    });
+</script>
