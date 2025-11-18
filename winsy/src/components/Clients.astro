@@ -1,0 +1,128 @@
+---
+const clientsMarquee = [
+    {
+        id: 1,
+        photo: "/clients/sd58x7.png",
+        name: "Banco de la Nación",
+    },
+    {
+        id: 2,
+        photo: "/clients/19xhzv.webp",
+        name: "Ministerio de Cultura",
+    },
+    {
+        id: 3,
+        photo: "/clients/u3l0fq.png",
+        name: "Municipalidad de Lima",
+    },
+    { id: 4, photo: "/clients/eesk80.png", name: "Telefónica" },
+    { id: 5, photo: "/clients/ybqn8j.png", name: "Backus" },
+    {
+        id: 6,
+        photo: "/clients/jl89sx.png",
+        name: "Rimac Seguros",
+    },
+    {
+        id: 7,
+        photo: "/clients/u0k147.png",
+        name: "Universidad de Lima",
+    },
+    { id: 8, photo: "/clients/p9x176.png", name: "BBVA" },
+    { id: 9, photo: "/clients/2q97de.png", name: "Claro Perú" },
+    { id: 10, photo: "/clients/ykhqkl.jpg", name: "Mapfre" },
+    {
+        id: 11,
+        photo: "/clients/dhrudz.png",
+        name: "Universidad San Martín",
+    },
+    { id: 12, photo: "/clients/1yj90p.png", name: "UTP" },
+];
+---
+
+<section class="grid pb-10 gap-2 relative overflow-hidden p-4" id="clientes">
+    <div>
+        <h2 class="font-normal text-2xl md:text-5xl text-center">
+            Nuestros <span class="font-bold"> Clientes</span>
+        </h2>
+        <p class="text-sm text-center md:text-base mt-6 text-gray-600">
+            Hemos tenido el honor de trabajar con prestigiosas instituciones y
+            organizaciones
+        </p>
+    </div>
+    <div class="relative overflow-hidden py-2">
+        <!-- Primer slider - se mueve a la izquierda -->
+        <div class="slider-row mb-4 overflow-hidden relative">
+            <div class="slider-track-left">
+                <div id="gallery" class="flex gap-4 w-full">
+                    {
+                        clientsMarquee.map((item) => (
+                            <div class="gallery-item flex relative flex-grow items-center overflow-hidden transition-all duration-500 ease-in-out w-[140px]">
+                                <img
+                                    src={item.photo}
+                                    alt={item.name}
+                                    class="w-full object-cover transition-transform duration-500"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Gradientes laterales -->
+        <div
+            class="pointer-events-none absolute inset-y-0 left-0 h-full w-1/12 bg-gradient-to-r from-white z-10"
+        >
+        </div>
+        <div
+            class="pointer-events-none absolute inset-y-0 right-0 h-full w-1/12 bg-gradient-to-l from-white z-10"
+        >
+        </div>
+    </div>
+</section>
+<style>
+    .slider-row {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider-track-left {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 50s linear infinite;
+    }
+
+    .slider-track-right {
+        display: flex;
+        width: max-content;
+        animation: scroll-right 50s linear infinite;
+    }
+
+    /* Animaciones */
+    @keyframes scroll-left {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes scroll-right {
+        from {
+            transform: translateX(-50%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    /* Imágenes responsivas */
+    #gallery img {
+        object-fit: cover;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    #gallery img:hover {
+    }
+</style>

@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../global.css";
+import Header from "../components/ui/Header.astro";
+import Main from "../components/ui/Main.astro";
+import Footer from "../components/ui/Footer.astro";
+import "@fontsource-variable/inter";
+import Contact from "../components/Contact.astro";
+import VideoSection from "../components/VideoSection.astro";
+import BetaContact from "../components/BetaContact.astro";
+---
+
+<Layout>
+    <Header />
+    <Main />
+
+    <Contact />
+    <VideoSection />
+
+    <Footer />
+    <BetaContact />
+</Layout>
+<style global>
+    * {
+        font-family: "Inter Variable", sans-serif;
+    }
+
+    /* Base: Margen de scroll para pantallas grandes */
+    #servicios,
+    #about,
+    #contacto {
+        scroll-margin-top: 4rem; /* Se aplica por defecto */
+    }
+
+    /* Media Query: Aplica el nuevo margen para pantallas pequeñas */
+    @media (max-width: 768px) {
+        #servicios,
+        #about,
+        #contacto {
+            scroll-margin-top: 2rem; /* Sobrescribe el valor base de 4rem */
+        }
+    }
+</style>

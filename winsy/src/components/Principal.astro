@@ -1,0 +1,148 @@
+---
+const marqueItems = [
+    { id: 1, url: "/images/z7aslg.jpeg", title: "" },
+    { id: 2, url: "/images/ud43c1.jpeg", title: "" },
+    { id: 3, url: "/images/8lxyu4.jpeg", title: "" },
+    { id: 5, url: "/images/5s0cgm.jpeg", title: "" },
+    { id: 6, url: "/images/7t0g8r.jpeg", title: "" },
+    { id: 7, url: "/images/wft24e.jpeg", title: "" },
+    { id: 8, url: "/images/pulcmk.jpeg", title: "" },
+    { id: 9, url: "/images/qz082e.jpeg", title: "" },
+    { id: 10, url: "/images/fwr569.jpeg", title: "" },
+    { id: 13, url: "/images/sgd648.jpeg", title: "" },
+    { id: 14, url: "/images/nxaytr.jpeg", title: "" },
+    { id: 15, url: "/images/lqbpc9.jpeg", title: "" },
+    { id: 16, url: "/images/nrcnot.jpeg", title: "" },
+    { id: 17, url: "/images/vbugzn.jpeg", title: "" },
+    { id: 18, url: "/images/iofho0.jpeg", title: "" },
+    { id: 20, url: "/images/ym8wdh.jpeg", title: "" },
+    { id: 21, url: "/images/pysd93.jpeg", title: "" },
+    { id: 22, url: "/images/t7u2rt.jpeg", title: "" },
+    { id: 23, url: "/images/jzcaun.jpeg", title: "" },
+];
+---
+
+<section
+    class="relative overflow-hidden bg-white md:min-h-screen flex items-center flex-col justify-start md:justify-center"
+>
+    <div
+        class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"
+    >
+    </div>
+
+    <div
+        class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/30 to-cyan-100/20 -z-5"
+    >
+    </div>
+
+    <div
+        class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"
+    >
+    </div>
+
+    <div
+        class="absolute top-40 left-20 w-72 h-72 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"
+    >
+    </div>
+
+    <div
+        class="absolute bottom-20 left-40 w-72 h-72 bg-gradient-to-r from-sky-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"
+    >
+    </div>
+    <div class="relative z-10 p-4">
+        <h1 class="text-2xl md:text-5xl font-black uppercase mb-6 text-center">
+            Transformamos cualquier ocasión en una experiencia sonora memorable
+        </h1>
+        <p class="text-center text-sm md:text-base mb-6 text-gray-600">
+            Shows musicales en vivo, saxofonista profesional, DJ y producción
+            integral de eventos corporativos y sociales
+        </p>
+        <div class="flex gap-4 justify-center">
+            <a
+                href="https://winsy.monoagencyma.com/#servicios"
+                class="flex flex-row flex-nowrap items-center justify-center content-center relative cursor-pointer overflow-hidden w-[118px] h-9 px-3 py-2 gap-2 rounded-xl bg-black hover:bg-[#3a3a3a] transition-all text-white text-sm font-normal antialiased opacity-100 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1)]"
+                >Ver Servicios</a
+            >
+            <a
+                href="https://winsy.monoagencyma.com/#contacto"
+                class="flex flex-row flex-nowrap items-center justify-center content-center relative cursor-pointer overflow-hidden w-[118px] h-9 px-3 py-2 gap-2 rounded-xl bg-cyan-700 hover:bg-black transition-all text-white text-sm font-normal antialiased opacity-100 shadow-[inset_0_2px_0_0_rgba(255,255,255,0.1)]"
+                >Contáctanos</a
+            >
+        </div>
+    </div>
+    <div class="md:max-w-6xl mx-auto relative overflow-hidden py-8">
+        <!-- Primer slider - se mueve a la izquierda -->
+        <div class="slider-row mb-4 overflow-hidden relative">
+            <div class="slider-track-left overflow-hidden">
+                <div id="gallery" class="flex gap-4 w-full overflow-hidden">
+                    {
+                        marqueItems.map((item) => (
+                            <img
+                                src={item.url}
+                                alt="Winsy Mussic"
+                                class="h-44 md:h-68 w-auto rounded-xl bg-gray-400"
+                            />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Gradientes laterales -->
+        <div
+            class="pointer-events-none absolute inset-y-0 left-0 h-full w-[0%] md:w-1/12 bg-gradient-to-r from-white z-10"
+        >
+        </div>
+        <div
+            class="pointer-events-none absolute inset-y-0 right-0 h-full w-[0%] md:w-1/12 bg-gradient-to-l from-white z-10"
+        >
+        </div>
+    </div>
+</section>
+
+<style>
+    .slider-row {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slider-track-left {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 50s linear infinite;
+    }
+
+    .slider-track-right {
+        display: flex;
+        width: max-content;
+        animation: scroll-right 50s linear infinite;
+    }
+
+    /* Animaciones */
+    @keyframes scroll-left {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes scroll-right {
+        from {
+            transform: translateX(-50%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    /* Imágenes responsivas */
+    #gallery img {
+        border-radius: 0.75rem;
+        object-fit: cover;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    #gallery img:hover {
+    }
+</style>

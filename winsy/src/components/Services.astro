@@ -1,0 +1,134 @@
+---
+const image:string[] = ['/services/dj.webp', '/services/eventos.webp'];
+---
+
+
+<section id="servicios" class="grid md:py-20 px-4 md:px-0 pb-12 gap-8 md:gap-60">
+    <div>
+        <h2 class="font-normal text-2xl md:text-5xl text-center">
+            Nuestros <span class="font-bold"> Servicios</span>
+        </h2>
+        <p class="text-sm text-center md:text-lg mt-6">
+            Ofrecemos una experiencia musical completa y personalizada para
+            cada tipo de evento
+        </p>
+
+        <div>
+
+            <!-- CARD 1 -->
+            <div class="p-3 md:p-6 mt-5 md:mt-8 md:mt-16 md:p-16 rounded-4xl shadow bg-[#E6F7FB]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center">
+                    <div class="col-span-2 md:col-span-1 space-y-2 md:space-y-6">
+                        <h3 class="text-center md:text-left text-xl md:text-4xl font-semibold">
+                            Saxofonista
+                        </h3>
+                        <p class="mt-4 text-sm md:text-base text-center md:text-left">
+                            La música comienza con un suave y melódico solo
+                            de jazz que llena el ambiente, luego se
+                            transforma en un ritmo funk contagioso con
+                            líneas de bajo que te hacen mover los pies. De
+                            repente, el show da un giro hacia el pop, con el
+                            saxofón interpretando melodías conocidas de
+                            forma emotiva, para después sorprender con una
+                            enérgica improvisación sobre una base de música
+                            electrónica. El saxofonista interactúa con el
+                            público, mostrando su dominio del instrumento en
+                            cada género, desde baladas románticas hasta
+                            ritmos latinos. Es un viaje musical que
+                            demuestra la versatilidad del saxofón.
+                        </p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <img src="https://files.catbox.moe/8lxyu4.jpeg" alt="Saxofonista"
+                            class="w-full h-auto mt-6 md:mt-0 rounded-2xl object-cover shadow-lg" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="p-3 md:p-6 mt-5 md:mt-8 md:mt-16 md:p-16 rounded-4xl shadow bg-[#C9EFF7]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center">
+                    <div class="col-span-2 md:col-span-1 space-y-2 md:space-y-6 md:order-2">
+                        <h3 class="text-center md:text-left text-xl md:text-4xl font-semibold">
+                            Saxofonista y violinista
+                        </h3>
+                        <p class="mt-4 text-sm md:text-base text-center md:text-left">
+                            Este espectáculo en vivo fusiona el jazz del
+                            saxofón con la elegancia del violín, navegando a
+                            través de géneros que van desde el clásico hasta
+                            el pop , rock y música latina . Una experiencia
+                            musical dinámica y emotiva que recorre un amplio
+                            abanico de melodías.
+                        </p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <img src="https://files.catbox.moe/z7aslg.jpeg" alt="Saxofonista y violinista"
+                            class="w-full h-auto mt-6 md:mt-0 rounded-2xl object-cover shadow-lg" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="p-3 md:p-6 mt-5 md:mt-8 md:mt-16 md:p-16 rounded-4xl shadow bg-[#ACE7F2]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center">
+                    <div class="col-span-2 md:col-span-1 space-y-2 md:space-y-6">
+                        <h3 class="text-center md:text-left text-xl md:text-4xl font-semibold">
+                            Shows musicales en vivo
+                        </h3>
+                        <p class="mt-4 text-sm md:text-base text-center md:text-left">
+                            Ofrecemos una amplia gama de formatos musicales,
+                            como bandas de diversos géneros (jazz, pop,
+                            rock, salsa, etc.), solistas, dúos y cuartetos
+                            de cuerdas.
+                        </p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                       <iframe class="h-40 md:h-70 w-full rounded-lg" src="https://www.youtube.com/embed/9anbSGClO8M?si=dKGxh-n_O45mA-RZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="p-3 md:p-6 mt-5 md:mt-8 md:mt-16 md:p-16 rounded-4xl shadow bg-[#8FDFEC]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center">
+                    <div class="col-span-2 md:col-span-1 space-y-2 md:space-y-6 md:order-2">
+                        <h3 class="text-center md:text-left text-xl md:text-4xl font-semibold">
+                            DJ profesionales
+                        </h3>
+                        <p class="mt-4 text-sm md:text-base text-center md:text-left">
+                            Contamos con DJs experimentados que crean la
+                            atmósfera perfecta con una selección musical
+                            variada y personalizada.
+                        </p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <img src={image[0]} alt="DJ profesionales"
+                            class="w-full h-auto mt-6 md:mt-0 rounded-2xl object-cover shadow-lg" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="p-3 md:p-6 mt-5 md:mt-8 md:mt-16 md:p-16 rounded-4xl shadow bg-[#72D7E7]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center">
+                    <div class="col-span-2 md:col-span-1 space-y-2 md:space-y-6">
+                        <h3 class="text-center md:text-left text-xl md:text-4xl font-semibold">
+                            Asesoría y producción integral
+                        </h3>
+                        <p class="mt-4 text-sm md:text-base text-center md:text-left">
+                            Brindan un servicio completo que abarca desde la
+                            planificación hasta la ejecución del evento,
+                            incluyendo la selección del talento musical y la
+                            gestión de equipos de sonido e iluminación.
+                        </p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <img src={image[1]} alt="Asesoría y producción integral"
+                            class="w-full h-auto mt-6 md:mt-0 rounded-2xl object-cover shadow-lg" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
