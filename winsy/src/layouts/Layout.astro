@@ -1,20 +1,60 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const { 
+	title = "Winsy Music | Shows Musicales, Saxofonista y DJ para Eventos",
+	description = "Transformamos tu evento con shows musicales en vivo, saxofonista profesional, DJ y producción integral para eventos corporativos y sociales. Experiencia memorable garantizada.",
+	image = "/images/og-image.jpg" // Asegúrate de tener una imagen representativa aquí
+} = Astro.props;
+
+// Obtener la URL canónica (importante para evitar contenido duplicado)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
+<html lang="es"> <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Winsy Music</title>
+		
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		
+		<meta name="keywords" content="saxofonista, DJ eventos, shows en vivo, música para bodas, eventos corporativos lima, producción de eventos, Winsy Music" />
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-*{
-scroll-behavior: smooth;
-}
-
+<style is:global>
+	/* He agregado is:global para que afecte a todo el sitio */
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	/* Recomendación: Agregar estilos base para evitar márgenes extraños */
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 </style>
